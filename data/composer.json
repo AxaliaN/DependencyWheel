@@ -1,88 +1,36 @@
 {
-    "name":        "sylius/sylius",
-    "type":        "project",
-    "description": "Modern ecommerce for Symfony2",
-    "license":     "MIT",
-    "homepage":    "http://sylius.org",
-    "authors": [
-        {
-            "name":     "Paweł Jędrzejewski",
-            "homepage": "http://pjedrzejewski.com"
-        },
-        {
-            "name":     "Sylius project",
-            "homepage": "http://sylius.org"
-        },
-        {
-            "name":     "Community contributions",
-            "homepage": "http://github.com/Sylius/Sylius/contributors"
-        }
-    ],
+    "name": "acsi/app-eurocampings",
+    "description": "Eurocampings versie 3 [P.075]",
+    "minimum-stability": "dev",
+    "license" : "proprietary",
     "require": {
-        "php":                                  ">=5.3.3",
-
-        "athari/yalinqo":                       "*@dev",
-        "doctrine/doctrine-bundle":             "1.2.*@dev",
-        "doctrine/doctrine-fixtures-bundle":    "2.2.*",
-        "doctrine/orm":                         "~2.3",
-        "friendsofsymfony/rest-bundle":         "0.13.*",
-        "friendsofsymfony/user-bundle":         "2.0.*@dev",
-        "fzaninotto/faker":                     "1.2.*",
-        "incenteev/composer-parameter-handler": "~2.0",
-        "jms/serializer-bundle":                "0.12.*",
-        "jms/translation-bundle":               "1.1.*",
-        "knplabs/knp-menu-bundle":              "*@dev",
-        "knplabs/knp-gaufrette-bundle":         "*@dev",
-        "knplabs/knp-snappy-bundle":            "*@dev",
-        "liip/doctrine-cache-bundle":           "*",
-        "liip/imagine-bundle":                  "0.9.*",
-        "mathiasverraes/money":                 "*@dev",
-        "omnipay/omnipay":                      "*@dev",
-        "sensio/distribution-bundle":           "2.3.*",
-        "stof/doctrine-extensions-bundle":      "1.1.*",
-        "symfony/assetic-bundle":               "2.3.*",
-        "symfony/intl":                         "~2.3",
-        "symfony/monolog-bundle":               "2.3.*",
-        "symfony/swiftmailer-bundle":           "2.3.*",
-        "symfony/symfony":                      "~2.3",
-        "twig/extensions":                      "1.0.*",
-        "white-october/pagerfanta-bundle":      "1.0.*@dev"
+        "php": ">=5.4",
+        "zendframework/zendframework": "2.*",
+        "acsi/acsi-eurocampings": "*",
+        "acsi/acsi-inline-editor": "dev-master"
     },
     "require-dev": {
-        "behat/behat":                  "2.4.*@stable",
-        "behat/symfony2-extension":     "*",
-        "behat/mink-extension":         "*",
-        "behat/mink-browserkit-driver": "*",
-        "phpspec/phpspec":              "2.0.*@dev",
-        "behat/mink-selenium2-driver":  "*"
+        "doctrine/data-fixtures": "*",
+        "zendframework/zend-developer-tools": "*",
+        "mockery/mockery": "0.8.0",
+        "firephp/firephp-core": "*",
+        "ccampbell/chromephp" : "*",
+        "fzaninotto/faker": "1.1.*",
+        "athletic/athletic": "dev-master",
+        "zendframework/zendframework": "2.3.*"
     },
-    "scripts": {
-        "post-install-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
-        ],
-        "post-update-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
-        ]
+    "repositories": [
+      {
+      "type": "vcs",
+      "url": "https://github.com/ACSI-IT/jackalope-doctrine-dbal"
     },
-    "autoload": {
-        "psr-0": { "Sylius\\": "src/" }
+    {
+      "url": "http://packages.tst",
+      "type": "composer"
     },
-    "config": {
-        "bin-dir": "bin"
-    },
-    "extra": {
-        "symfony-app-dir": "app",
-        "symfony-web-dir": "web",
-        "incenteev-parameters": {
-            "file": "app/config/parameters.yml"
-        }
+    {
+      "type": "pear",
+      "url": "http://pear.php.net"
     }
+    ]
 }
